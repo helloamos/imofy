@@ -30,6 +30,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Additional gem
+gem 'devise', '~> 4.3'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'fontawesome-rails', '~> 4.0', '>= 4.0.3.2'
+gem 'country_select', '~> 3.0'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,6 +47,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

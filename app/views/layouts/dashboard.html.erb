@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imofy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+
+
+<div class="wrapper">
+
+ <%= render('layouts/partials/dheader') %>
+  <!-- Left side column. contains the logo and sidebar -->
+<%= render('layouts/partials/aside') %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
+        <%= yield %>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<%= render('layouts/partials/dfooter') %>
+
+
+</div>
+<!-- ./wrapper -->
+
+
+  	
+    
+  </body>
+</html>
