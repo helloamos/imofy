@@ -3,12 +3,13 @@ class CreateProperty < ActiveRecord::Migration[5.1]
     create_table :properties do |t|
     	t.string	:name
     	t.text 		:description
-    	t.string   	:type
-    	t.integer 	:operation_id
-    	t.string	:status
+    	t.references  	:property_type
+    	t.references    :contract_type
+        t.float     :price
+    	t.references	:status
     	t.string	:city
     	t.string    :neighborhood
-    	t.string    :thumbnail
+    	t.attachment    :thumbnail
     	t.references :user
     	t.timestamps :null => false
 

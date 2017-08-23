@@ -1,8 +1,10 @@
 class PropertiesController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_all_data
+	before_action :set_property, only: [:show, :edit, :update, :destroy]
 	layout("dashboard")
 	def index
-		@properties = Property.all
+		
 	end
 
 	def show
@@ -12,7 +14,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def new
-		@property = Property.new
+		
 	end
 
 	
@@ -39,7 +41,7 @@ class PropertiesController < ApplicationController
 	def update
 	    respond_to do |format|
 	      if @property.update(property_params)
-	        format.html { redirect_tto property_path, notice: 'Operation was successfully updated.' }
+	        format.html { redirect_to property_path, notice: 'Operation was successfully updated.' }
 	        format.json { render :show, status: :ok, location: @property }
 	      else
 	        format.html { render :edit }
@@ -67,8 +69,17 @@ class PropertiesController < ApplicationController
 		@property= Property.find(params[:id])
 		
 	end
+
 	def property_params
-		params.require(:property).permit(:name, :description, :city, :neighborhood, :status)
+		params.require(:property).permit(:name, :description, :property_type_id, :contract_type_id, :price, :city, :neighborhood, :status_id, :thumbnail)
+	end
+
+	def set_all_data
+		@property = Property.new
+		@properties = Property.all
+		@contract_types = ContractType.all
+		@property_types = PropertyType.all
+		@status = Status.all
 	end
 
 end

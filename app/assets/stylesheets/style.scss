@@ -1,4 +1,10 @@
-@import'bootstrap';
+
+
+.content-wrapper {
+   
+    background-color: #f4f6f8  !important;
+    
+}
 
 /* Navbar */
 .navbar-default {
@@ -16,10 +22,12 @@
 }
  
 .jumbotron {
-	background-image: url("hero/hero-bamako.jpg");
+	/*background-image: url("hero/hero-bamako.jpg");*/
 	background-size: cover;
 	background-position: center;
-    height: 100vh;
+       min-height: 350px;
+    height: 500px;
+    background-color: #673AB7 !important;
     padding-top: 150px;
  
     margin-left: -15px !important;
@@ -87,7 +95,7 @@
 
 }
 .content-wrapper{
-    height: 85vh  !important;
+    /*height: 85vh  !important;*/
 }
 .logo-lg img{
     width: 97px;
@@ -96,3 +104,22 @@
     float: right !important;
     margin-left: 5px;
 }
+.thumbnail-preview{
+    text-align: center;
+    min-height: 170px;
+}
+.thumbnail-preview img{
+    width: 145px;
+}
+
+#pictureInputLink{
+    text-decoration:none;
+}
+#pictureInput{
+    display:none
+}
+.insert_image_link{
+    text-align : center;
+    font-size: 14px;
+}
+

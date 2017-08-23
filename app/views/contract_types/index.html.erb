@@ -1,0 +1,88 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+         <div class="pull-left">
+             <h1>Types de contrat</h1>
+        <!-- <small>Liste des propriétés</small> -->
+         </div> 
+
+          <h1>
+       
+      </h1>
+           
+            <div class="pull-right">
+              <%= link_to "Ajouter",  new_contract_type_path , :remote => false, class: "btn bg-purple" %>
+            </div>
+          
+
+
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-sm-12">
+    
+        </div>
+    </div>
+
+    <div class="row">
+        <section id="widget_4" class="col-md-12" data-size="4" data-url="#">
+            <!-- TABLE: LATEST ORDERS -->
+        
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                   <!-- <h3 class="box-title">Liste des types de  propriétés</h3>-->
+
+                <div class="box-tools pull-right">
+                    <!-- Right content here -->
+                </div>
+          </div>
+
+          <div class="box-body">
+             <!-- Content here -->
+             <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      
+                      <th>Nom</th>
+                      <th>Description</th>
+                      
+                      
+                      <th style="width: 60px"></th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody class="property-type-index">
+                    <%= render('index') %>
+                  </tbody>
+              </table>
+          </div>
+
+          <!--<div class="box-footer hidden-xs hidden-sm">
+            Section footer content here 
+          </div>-->
+        
+        </section>
+    </div>
+
+    
+
+   
+
+     
+    
+</section><!-- /.content -->
+
+<div id="property-type-modal" class="modal fade"></div>
+
+
+
+</div>
+

@@ -11,7 +11,31 @@
 // about supported directives.
 //
 //= require jquery
+
+//= require bootsy
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+$(function() {
+  $('#pictureInput').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result;
+      $('.thumbnail-preview').html(img);
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});
+
+$(function(){
+$("#pictureInputLink").on('click', function(e){
+    e.preventDefault();
+    $("#pictureInput:hidden").trigger('click');
+});
+});

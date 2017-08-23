@@ -1,0 +1,28 @@
+<% @contract_types.each do |contract_type| %>
+    <tr>
+      
+      <td><%= contract_type.name %></td>
+      <td><%= contract_type.description %></td>
+    
+                              
+    
+  <td>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">GERER
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        
+        <li>
+            <%= link_to raw('<i class="fa fa-pencil-square-o" aria-hidden="true"> Modifier</i>'),edit_contract_type_path(contract_type), remote: false , "data-toggle"=>"tooltip", "data-placement"=>"top", title:"Modifier"%>
+        <li>
+
+          <li>
+            <%= link_to raw('<i class="fa fa-trash-o" aria-hidden="true"> Supprimer</i>'), contract_type_delete_path(contract_type),:remote => true, class: "red-text" , "data-toggle"=>"tooltip", "data-placement"=>"top", title:"Supprimer"%>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </td>
+    </tr>
+<% end %>

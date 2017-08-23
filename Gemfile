@@ -36,6 +36,11 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'fontawesome-rails', '~> 4.0', '>= 4.0.3.2'
 gem 'country_select', '~> 3.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'paperclip', '~> 5.1.0'
+#gem 'trix', '~> 0.11.0'
+gem 'bootsy', '~> 2.4'
+#gem 'tinymce-rails'
+#gem 'dropzonejs-rails', '~> 0.8.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
