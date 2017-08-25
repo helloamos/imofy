@@ -1,34 +1,60 @@
 <div class="container-fluid">
 	<div class="jumbotron text-center">
-		<div class="jumbotron-text">
-		  <h1>Promouvoir, vendre, acheter... </h1>
-		  <p>Ateliers, séminaires, cérémonies, conférences, concerts et festivals, sport, promotions, rencontres etc...</p>
-	 
-		</div>
-	  <div class="jumbotron-form text-center">
-			<form class="form-inline">
-			
+		<div class="container">
+			<div class="jumbotron-text">
+			  <h1>Promouvoir, vendre, acheter... </h1>
+			  <p>Ateliers, séminaires, cérémonies, conférences, concerts et festivals, sport, promotions, rencontres etc...</p>
+		 
+			</div>
+		    <div class="jumbotron-form text-center">
+				<%= form_tag("/search", method: "get", class: "search-form") do %>
 
-				<div class="form-group">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-				    
-				</div>
+				<div class="row">
 
-				<div class="form-group">
-				   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-				</div>
-
-				<div class="form-group">
-					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-				    
-				</div>		
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Transfer cash</button>
 					
-				</div>
-			</form>
-		</div>
+						<div class="col-md-2">
+							<div class="form-group">
+					  		<%= select_tag :property_type, options_from_collection_for_select(@property_types, :id, :name), {prompt:"Ex. Appartement" , class: "form-control"} %>
+					  		</div>
+					  	</div>
 
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  		<%= select_tag(:contract_type, options_from_collection_for_select(@property_types, :id, :name), {prompt:"Ex. Vente" , class: "form-control"})%>
+					  		</div>
+					  	</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  			<%= number_field_tag(:q, nil,  class: "form-control", placeholder: "Prix") %>
+					  		</div>
+					  	</div>
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  		<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Ex. Bamako") %>
+					  		</div>
+					  	</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+								
+					  			<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Ex. Kalaban Coura") %>
+					  		</div>
+					  	</div>
+						<div class="col-md-2">
+							<div class="form-group">
+					  			<%= submit_tag("Search", class: "btn bg-maroon btn-block btn-flat") %>
+							</div>
+						</div>
+
+				
+
+				  
+				  </div>
+				<% end %>
+				
+			</div>
+</div>
 	</div>
 	
 </div>

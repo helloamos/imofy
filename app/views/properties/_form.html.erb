@@ -1,5 +1,16 @@
 <div class="new-property">
-<%= form_for @property  do |f| %>
+<%= form_for(@property) do |f| %>
+ <% if @property.errors.any? %>
+    <div class="error_explanation">
+      <h3><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% @property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <div class="row">
 <div class="col-md-8">
 	<!-- general form elements -->
@@ -110,7 +121,7 @@
 				</div>	
 				<%= f.file_field :thumbnail,   id: "pictureInput", placeholder: "Image" %>
 				<div class="insert_image_link">
-					<%= link_to "Insérer une image", "#", id: "pictureInputLink" %>
+					 <a href="" id="pictureInputLink">Insérer une image</a>
 				</div>
 			</div>
 			
@@ -123,7 +134,7 @@
 		<div class="box-body">
 
 			<div class="form-group">
-				<%= f.submit "Publier", class: "btn bg-purple pull-right" %>
+				<%= f.submit "PUBLIER", class: "btn bg-purple btn-block " %>
 			</div>
 			
 

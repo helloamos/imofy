@@ -1,10 +1,11 @@
 class PropertiesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_all_data
+	before_action :set_all_data, only: [:index]
 	before_action :set_property, only: [:show, :edit, :update, :destroy]
 	layout("dashboard")
+
 	def index
-		
+		@properties = current_user.properties
 	end
 
 	def show
@@ -14,7 +15,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def new
-		
+		@property = Property.new
 	end
 
 	
@@ -75,8 +76,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def set_all_data
-		@property = Property.new
-		@properties = Property.all
+		
 		@contract_types = ContractType.all
 		@property_types = PropertyType.all
 		@status = Status.all

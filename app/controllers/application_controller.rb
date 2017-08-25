@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
       #redirect_to dashboard_path
       edit_user_registration_path
     end
+protected
+
+    
+
 
 end

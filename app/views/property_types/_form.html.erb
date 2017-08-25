@@ -1,8 +1,8 @@
 
 <%= form_with(model: property_type, local: true) do |form| %>
   <% if property_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(property_type.errors.count, "error") %> prohibited this property_type from being saved:</h2>
+    <div class="error_explanation">
+      <h3><%= pluralize(property_type.errors.count, "error") %> prohibited this property_type from being saved:</h3>
 
       <ul>
       <% property_type.errors.full_messages.each do |message| %>

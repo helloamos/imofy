@@ -34,7 +34,7 @@
         </li>
         <li>
           <p class="navbar-btn">
-            <%= link_to "Poster un bien" ,new_property_path , class: "btn bg-purple" %>
+            <%= link_to " +" ,new_property_path , class: "btn bg-purple" %>
           </p>
         </li>
 
@@ -59,6 +59,7 @@
                 <li>
                 
                  <%= link_to raw('<i class="fa fa-sign-out icon-sign-out"> </i>  Déconnexion'), destroy_user_session_path, method: :delete %>
+                 </li>
         </li>
         <% end %>
       </ul>

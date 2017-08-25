@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   
+  resources :suscribers
   #devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
 
-  
+  get "landing" => "pages#landing_page", as: :landing_page
+  get "suscribe" => "pages#newsletter_suscribe", as: :suscribe
+
+
   	#get "dashboard" => "dashboard#show"
   
 scope '/admin' do
@@ -41,6 +45,7 @@ resources :properties do
     }
 
     Rails.application.routes.draw do
+  resources :suscribers
       mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
      

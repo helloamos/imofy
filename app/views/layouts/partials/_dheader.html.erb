@@ -4,7 +4,12 @@
     <!-- Logo -->
     <div class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- <span class="logo-mini"><b>A</b>LT</span> -->
+       <span class="logo-mini">
+        <%= link_to root_url do %>
+          <%= image_tag "logo/logo-mobile.png" %>
+        <% end %>
+        
+       </span> 
       <!-- logo for regular state and mobile devices -->
       <!-- <span class="logo-lg"><b>Admin</b>LTE</span> -->
       <!-- <a class="navbar-brand" href="#">Imofy</a> -->
@@ -31,7 +36,7 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success">0</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
@@ -47,7 +52,7 @@
                       <!-- Message title and timestamp -->
                       <h4>
                         Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        <small><i class="fa fa-clock-o"></i> 0 mins</small>
                       </h4>
                       <!-- The message -->
                       <p>Why not buy a new awesome theme?</p>
@@ -67,16 +72,16 @@
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning">0</span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header">You have 0 notifications</li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
                   <li><!-- start notification -->
                     <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                      <i class="fa fa-users text-aqua"></i> 0 new members joined today
                     </a>
                   </li>
                   <!-- end notification -->
@@ -117,11 +122,11 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                <%= link_to "Mon compte", edit_user_registration_path, class: "btn btn-default btn-flat"  %>
+                <%= link_to "Mon compte", edit_user_registration_path, class: "btn bg-purple"  %>
                   <!-- <a href="#" class="btn btn-default btn-flat">Profile</a> -->
                 </div>
                 <div class="pull-right">
-                 <%= link_to "Se Déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-default btn-flat"  %>
+                 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn bg-maroon"  %>
                 </div>
               </li>
             </ul>
