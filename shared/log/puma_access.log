@@ -1,0 +1,12 @@
+=== puma startup: 2017-08-25 16:50:55 +0200 ===
+[5329] + Gemfile in context: /home/deploy/rails_apps/imofy/Gemfile
+[5297] - Worker 0 (pid: 5329) booted, phase: 0
+[5297] - Gracefully shutting down workers...
+[5297] === puma shutdown: 2017-08-25 16:53:20 +0200 ===
+[5297] - Goodbye!
+=== puma startup: 2017-08-25 16:53:54 +0200 ===
+[5498] + Gemfile in context: /home/deploy/rails_apps/imofy/Gemfile
+[5466] - Worker 0 (pid: 5498) booted, phase: 0
+[5466] - Gracefully shutting down workers...
+[5466] === puma shutdown: 2017-08-25 16:55:19 +0200 ===
+[5466] - Goodbye!
