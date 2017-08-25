@@ -5,4 +5,5 @@ class PagesController < ApplicationController
 	def newsletter_suscribe
 		 @suscriber = Suscriber.new
 	end
+
 end
