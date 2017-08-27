@@ -46,7 +46,7 @@
              <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      
+                       <th>Image</th>
                       <th>Nom</th>
                       <th>Type</th>
                       <th>Prix</th>
@@ -67,6 +67,11 @@
           <!--<div class="box-footer hidden-xs hidden-sm">
             Section footer content here 
           </div>-->
+
+          <div class="row page-navi">
+      <%= will_paginate @properties, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %>
+        
+    </div>
         
         </div>
     </div>

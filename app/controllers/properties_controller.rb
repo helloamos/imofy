@@ -1,11 +1,11 @@
 class PropertiesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_all_data, only: [:index]
+	before_action :set_all_data, only: [:index, :edit, :update, :new]
 	before_action :set_property, only: [:show, :edit, :update, :destroy]
 	layout("dashboard")
 
 	def index
-		@properties = current_user.properties
+		@properties = current_user.properties.paginate(:page => params[:page], :per_page => 8)
 	end
 
 	def show
@@ -42,7 +42,7 @@ class PropertiesController < ApplicationController
 	def update
 	    respond_to do |format|
 	      if @property.update(property_params)
-	        format.html { redirect_to property_path, notice: 'Operation was successfully updated.' }
+	        format.html { redirect_to properties_path, notice: 'Operation was successfully updated.' }
 	        format.json { render :show, status: :ok, location: @property }
 	      else
 	        format.html { render :edit }

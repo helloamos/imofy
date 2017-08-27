@@ -3,5 +3,5 @@ class PropertyType < ApplicationRecord
 	# Relationship
 	has_many :properties
 	# Data validation.
-	validates_presence_of :name
+	validates :name, presence: true, uniqueness: true
 end

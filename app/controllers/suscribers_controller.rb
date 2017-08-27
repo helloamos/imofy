@@ -31,7 +31,7 @@ class SuscribersController < ApplicationController
         format.html { redirect_to suscribe_path, notice: 'Suscriber was successfully created.' }
         format.json { render :show, status: :created, location: suscribe_path }
       else
-        format.html { render :new }
+        format.html { redirect_to suscribe_path, alert: 'Suscriber already exists for this entry.'}
         format.json { render json: @suscriber.errors, status: :unprocessable_entity }
       end
     end

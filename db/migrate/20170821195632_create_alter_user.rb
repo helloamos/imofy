@@ -8,6 +8,8 @@ class CreateAlterUser < ActiveRecord::Migration[5.1]
     	t.string       :address
     	t.string       :phone
         t.attachment   :avatar
+        t.string       :slug, unique: true
+        t.integer      :role_id, default: 2
     end
     
   end

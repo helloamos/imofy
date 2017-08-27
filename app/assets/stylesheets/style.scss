@@ -359,3 +359,43 @@ label {
   
     height: 50px !important;
 }
+td .dropdown .btn-default {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+    /* padding: 2px; */
+    font-size: 9px;
+    height: 30px !important;
+}
+td img {
+    vertical-align: middle;
+    width: 50px;
+}
+tr {
+    cursor: pointer;
+}
+.page-navi{
+    text-align: right;
+    margin-right: 11px;
+}
+.status-1{
+    border: 1px solid green;
+    padding: 4px;
+    border-radius: 5px;
+    background: green;
+    color: white;
+}
+.status-2{
+    border: 1px solid orange;
+    padding: 4px;
+    border-radius: 5px;
+    background: orange;
+    color: white;
+}
+.status-3{
+    border: 1px solid red;
+    padding: 4px;
+    border-radius: 5px;
+    background: red;
+    color: white;
+}
