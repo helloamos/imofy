@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   #devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "pages#newsletter_suscribe"
+  get "home" => "home#index"
 
   get "landing" => "pages#landing_page", as: :landing_page
   get "suscribe" => "pages#newsletter_suscribe", as: :suscribe
+  #get "admin/properties/:slug/edit" => "properties#edit"
+
 
 
   	#get "dashboard" => "dashboard#show"

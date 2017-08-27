@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
 	<div class="jumbotron text-center">
 		<div class="container">
 			<div class="jumbotron-text">
@@ -54,7 +54,43 @@
 				<% end %>
 				
 			</div>
-</div>
+		</div>
 	</div>
+
 	
+
+
+<!-- FEATURED SECTION -->
+<div class="section-featured">
+<div class="container">
+		<div class="section-title">
+			<h2>En vedette</h2>
+		</div>
+
+		<div class="row">
+
+			<% @featured.each do |e| %>
+				<div class="col-md-4">	
+					<div class="property-itm">
+						<div class="property-thumbnail">
+							<%= image_tag e.thumbnail.url(:medium) %>	
+						</div>
+						<div class="property-title">
+							<h4><%= link_to e.name, property_path(e) %></h4>
+						</div>
+						<%= e.city %>
+					    <%= e.user_id  %>
+					</div>
+				</div>
+
+
+			<% end %> 
+		</div>
+
+		 <div class="row page-navi">
+      <%= will_paginate @featured, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %>
+        
+    </div>
+
+</div>
 </div>

@@ -301,39 +301,10 @@ label {
     margin-top: 40px;
 }
 
-.profile-social-share__btn{
-    color: #fff;
-    background-color: #d3dadf;
-    text-decoration: none!important;
-    outline: 0;
-}
- ul.profile-social-share__wrapper  {
-    list-style-type: none;
-}
 
-.link {
-    color: #03a9f4;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    outline: 0;
-}
 
-.profile-social-share__btn {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    margin: 10px!important;
-    width: 35px!important;
-    height: 35px;
-    font-size: 20px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-}
+
+
 .social-link {
     float: right;
     margin-top: 40px;
@@ -355,10 +326,23 @@ label {
     padding-right: 5px !important; 
 }
 
-.search-form input, button, select, textarea {
+.search-form  input {
   
     height: 50px !important;
 }
+.search-form   button{
+  
+    height: 50px !important;
+}
+.search-form   select {
+  
+    height: 50px !important;
+}
+.search-form   textarea {
+  
+    height: 50px !important;
+}
+
 td .dropdown .btn-default {
     background-color: #f4f4f4;
     color: #444;
@@ -398,4 +382,20 @@ tr {
     border-radius: 5px;
     background: red;
     color: white;
+}
+.property-item{
+    border: 1px solid blue;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: white;
+    width: 100%;
+  
+}
+.property-thumbnail img {
+    vertical-align: middle;
+    width: 100%;
+    border: 1px solid;
+}
+.section-featured{
+    background-color: red;
 }
