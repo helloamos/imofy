@@ -2,20 +2,27 @@ class PropertiesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_all_data, only: [:index, :edit, :update, :new]
 	before_action :set_property, only: [:show, :edit, :update, :destroy]
-	layout("dashboard")
+	before_action :related_post, only: [:show]
+
+	
 
 	def index
-		@properties = current_user.properties.paginate(:page => params[:page], :per_page => 8)
+		@properties = current_user.properties.order(created_at: :desc).paginate(:page => params[:page], :per_page => 8)
+		render :layout => "dashboard"
 	end
 
 	def show
+		@message = Message.new
 	end
 
+
 	def edit
+		render :layout => "dashboard"
 	end
 
 	def new
 		@property = Property.new
+		render :layout => "dashboard"
 	end
 
 	
@@ -37,6 +44,7 @@ class PropertiesController < ApplicationController
 	      end
 	    end
 	#end
+	
 	end
 
 	def update
@@ -49,6 +57,7 @@ class PropertiesController < ApplicationController
 	        format.json { render json: @property.errors, status: :unprocessable_entity }
 	      end
 	    end
+	  
 	  end
 
 	  # DELETE /ponies/1
@@ -81,6 +90,12 @@ class PropertiesController < ApplicationController
 		@contract_types = ContractType.all
 		@property_types = PropertyType.all
 		@status = Status.all
+		@unities = Unity.all
+		
+	end
+
+	def related_post
+		@related_property = Property.related_property(@property.property_type_id)
 	end
 
 end

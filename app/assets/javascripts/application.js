@@ -16,6 +16,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require bootstrap
+//= require social-share-button
 //= require_tree .
 $(function() {
   $('#pictureInput').on('change', function(event) {

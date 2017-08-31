@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827010931) do
+ActiveRecord::Schema.define(version: 20170831084923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20170827010931) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "sender_name"
+    t.string "sender_phone"
+    t.string "sender_email"
+    t.text "content"
+    t.bigint "recipient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
+  end
+
   create_table "properties", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -51,6 +62,9 @@ ActiveRecord::Schema.define(version: 20170827010931) do
     t.string "thumbnail_content_type"
     t.integer "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+    t.boolean "published", default: true
+    t.boolean "featured", default: false
+    t.bigint "unity_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170827010931) do
     t.index ["contract_type_id"], name: "index_properties_on_contract_type_id"
     t.index ["property_type_id"], name: "index_properties_on_property_type_id"
     t.index ["status_id"], name: "index_properties_on_status_id"
+    t.index ["unity_id"], name: "index_properties_on_unity_id"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 

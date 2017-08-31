@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :unities
+  
+  resources :messages
   resources :suscribers
   #devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -9,7 +10,10 @@ Rails.application.routes.draw do
 
   get "landing" => "pages#landing_page", as: :landing_page
   get "suscribe" => "pages#newsletter_suscribe", as: :suscribe
+  get "/property/:id" => "properties#show", as: :property_show
   #get "admin/properties/:slug/edit" => "properties#edit"
+
+  get "search" => "searches#simple_search", as: :simple_search
 
 
 
@@ -21,9 +25,13 @@ scope '/admin' do
   resources :statuses
   resources :contract_types
   resources :property_types
+  resources :unities
 end
 
 resources :properties do
+      get 'delete'
+ end
+ resources :unities do
       get 'delete'
  end
 
@@ -49,6 +57,7 @@ resources :properties do
     }
 
     Rails.application.routes.draw do
+  resources :messages
   resources :unities
   resources :suscribers
       mount Bootsy::Engine => '/bootsy', as: 'bootsy'

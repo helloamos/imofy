@@ -43,6 +43,7 @@ gem 'bootsy', '~> 2.4'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
+gem 'social-share-button', '~> 0.10.0'
 #gem 'tinymce-rails'
 #gem 'dropzonejs-rails', '~> 0.8.1'
 

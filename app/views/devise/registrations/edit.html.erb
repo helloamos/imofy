@@ -23,6 +23,9 @@
                 </div>
 
             </div>
+
+            
+
             <div class="col-sm-4">
 
             <div class="form-group">
@@ -32,18 +35,42 @@
                 <%= f.file_field :avatar,   id: "pictureInput", placeholder: "Image" %>
                 <div class="insert_image_link">
                     
-                    <a href="" id="pictureInputLink">Insérer une image</a>
+                    <a href="" id="pictureInputLink" class="btn bg-purple">Insérer une image</a>
                 </div>
             </div>
 
-  </div>
-  </div>
+         </div>
+    </div>
 
 
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+  <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                 <%= f.label "Adresse" %>
+                    <%= f.text_field :address, autofocus: true, class: "form-control", placeholder: "Adresse" %>
+                    </div>
+              </div>
+
+              <div class="col-sm-4">
+              <div class="form-group">
+                 <%= f.label "Ville" %>
+                      <%= f.text_field :city, autofocus: true, class: "form-control", placeholder: "Ville" %>
+                      </div>
+              </div>
+
+              <div class="col-sm-4">
+              <div class="form-group">
+                 <%= f.label "Téléphone" %>
+                      <%= f.text_field :phone, autofocus: true, class: "form-control", placeholder: "Téléphone" %>
+                      </div>
+              </div>
+            </div>
+
 
   <div class="form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

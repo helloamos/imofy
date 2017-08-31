@@ -1,0 +1,171 @@
+<div class="container">
+	<!-- Property content -->
+	<div class="property-content">
+	
+		<div class="col-md-8">
+			<div class="box box-primary">
+				<div class="box-body">
+
+					<!-- Property thumbnail -->
+					<div class="property-content-thumbnail">
+
+						<%= image_tag @property.thumbnail.url(:large) %>
+					</div>
+
+					<!-- Content header -->
+					<div class="property-content-title">
+						<h1><%= @property.name %></h1>		
+					</div><!-- Title -->
+					<div class="property-content-price">
+						<h3><%= number_with_precision(@property.price, delimiter: " ", separator: "", precision: 0) %>
+						/<%= unity_name(@property.unity_id) %></h3>
+					</div>
+					<div class="property-content-address">
+						<%= @property.neighborhood %>
+						<%= @property.city %>
+					</div>
+
+
+					<div class="property-content-description">
+						<%= @property.description.html_safe %>
+					</div>
+				</div>
+
+			</div>
+		
+
+			<div class="box box-primary property-agent-contact">
+    			<div class="box-header with-border">
+					<h1 class="box-title">Information</h1>
+				</div>
+
+				<div class="box-body">
+
+                	<%= form_for(@message) do |form| %>
+        
+            			<div class="media agent-media">
+            				<div class="media-left">
+            					<%= image_tag user_thumbnail(@property.user_id) %>
+            				</div>
+            				<div class="media-body">
+            					<div>
+            						<i class="fa fa-user"></i> 
+            						<%= user_name(@property.user_id) %>
+            					</div>
+            				
+            					<div>
+            						<i class="fa fa-phone"></i>
+            							<%= user_phone(@property.user_id) %>
+            					</div>
+            					<div>
+            						<i class="fa fa-map-marker" aria-hidden="true"></i>
+            							<%= user_city(@property.user_id) %>
+            					</div>
+            				</div>
+            					
+            				<div class="detail-title-inner">
+                				<h4 class="title-inner">Renseignez-vous sur cette propriété</h4>
+            				</div>		
+            			</div>
+
+			            <div class="row">
+			                <div class="col-sm-4 col-xs-12">
+			                    <div class="form-group">
+			                       
+			                        <%= form.text_field :sender_name, class: "form-control", placeholder: "Nom", required: true %>
+			                    </div>
+			                </div>
+			                <div class="col-sm-4 col-xs-12">
+			                    <div class="form-group">
+			                         <%= form.text_field :sender_phone, class: "form-control", placeholder: "Numéro de téléphone", required: true %>
+			                    </div>
+			                </div>
+			                <div class="col-sm-4 col-xs-12">
+			                    <div class="form-group">
+			                        <%= form.email_field :sender_email, class: "form-control", placeholder: "Email", required: true %>
+			                    </div>
+			                </div>
+			                <div class="col-sm-12 col-xs-12">
+			                    <div class="form-group">
+			                    	<%= form.text_area :content, rows:6, class: "form-control", placeholder: "Votre message ici!" %>
+			                    </div>
+			                </div>
+                        </div>
+
+                        
+
+                        <%= form.submit "ENVOYER", class: "btn bg-purple pull-right" %>
+
+    				<% end %>
+    			</div>
+
+			</div>
+			
+		</div>
+
+		<!-- Sidebar -->
+		<div class="col-md-4">
+			<div class="box box-primary">
+					<div class="box-header with-border">
+						<h1 class="box-title">Partagez</h1>
+						
+					</div>
+					<div class="box-body">
+					<%= social_share_button_tag(@property.name) %>
+					</div>
+			</div>
+
+			<div class="box box-primary">
+					<div class="box-header with-border">
+						<h1 class="box-title">Propriétés similaires</h1>
+
+					</div>
+					<div class="box-body">
+
+						<% @related_property.each do |property| %>
+
+							<div class="row related-property">
+								<div class="col-xs-3">
+									<div class= "related-property-thumb">
+										<%= image_tag property.thumbnail.url(:medium) %>
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div  class= "related-property-title">
+										<%= link_to property.name, property_show_path(property) %>
+									</div>
+									<div  class= "related-property-price">
+										<%= number_with_precision(@property.price, delimiter: " ", separator: "", precision: 0) %>
+										/<%= unity_name(property.unity_id) %>
+									</div>
+									<div  class= "related-property-address">
+										<%= property.neighborhood %>, 
+										<%= property.city %> 
+									</div>
+								</div>
+							</div>
+						
+
+						<% end %>
+					</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

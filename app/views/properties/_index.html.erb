@@ -2,11 +2,11 @@
     <tr>
       <td><%= image_tag property.thumbnail.url(:medium) %></td>
       <td><%= property.name %></td>
-      <td><%= property_type_id_to_name(property.property_type_id) %></td>
+      <td><%= property_type(property.property_type_id) %></td>
       <td><%= number_with_precision(property.price, delimiter: " ", separator: "", precision: 0)  %></td>
       <td><%= property.city %></td>
       <td><%= property.neighborhood %></td>
-      <td><span class="status-<%= property.status_id %>"><%= status_id_to_name(property.status_id) %></span></td>
+      <td><span class="status-<%= property.status_id %>"><%= status(property.status_id) %></span></td>
                               
      
      

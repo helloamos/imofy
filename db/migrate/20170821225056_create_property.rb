@@ -10,6 +10,9 @@ class CreateProperty < ActiveRecord::Migration[5.1]
     	t.string	:city
     	t.string    :neighborhood
     	t.attachment    :thumbnail
+        t.boolean       :published, default: true
+        t.boolean       :featured, default: false
+        t.references    :unity
     	t.references :user
     	t.timestamps :null => false
 
