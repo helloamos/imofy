@@ -5,7 +5,14 @@ class Property < ActiveRecord::Base
 
 	
 	# Paperclip usage
- 	has_attached_file :thumbnail, styles: { medium: "300x150>", thumb: "100x100>", large: "960x526>" }, default_url: "/images/uploads/:style/missing.png",  validate_media_type: false
+ 	has_attached_file :thumbnail, styles: { medium: "300x150>", thumb: "100x100>", large: "960x526>" }, 
+ 	#:path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
+ 	:path => ":rails_root/public/system/:class/:attachment/:id_partition/:style/:filename",
+	#:url => "/system/:attachment/:id/:basename_:style.:extension",
+	:url => "/system/:class/:attachment/:id_partition/:style/:filename",
+ 	default_url: "/images/uploads/:style/missing.png",  validate_media_type: false
+    #has_attached_file :thumbnail, styles: { medium: "300x150>", thumb: "100x100>", large: "960x526>" }, default_url: "/system/:class/:attachment/:id_partition/:style/:filename",  validate_media_type: false
+
     validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\z/
 	
 	# Relationship
