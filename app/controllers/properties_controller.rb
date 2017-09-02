@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, only: [:edit, :update, :destroy]
 	before_action :set_all_data, only: [:index, :edit, :update, :new]
 	before_action :set_property, only: [:show, :edit, :update, :destroy]
 	before_action :related_post, only: [:show]
