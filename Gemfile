@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Additional gem
+gem 'rails-i18n', '~> 5.0', '>= 5.0.4'
 gem 'devise', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'fontawesome-rails', '~> 4.0', '>= 4.0.3.2'
@@ -44,6 +45,11 @@ gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
 gem 'social-share-button', '~> 0.10.0'
+gem 'omniauth-google-oauth2', '~> 0.5.2'
+gem 'omniauth-facebook', '~> 4.0'
+# Use ActiveRecord Sessions
+gem 'activerecord-session_store', '~> 1.0'
+gem 'devise-i18n'
 #gem 'tinymce-rails'
 #gem 'dropzonejs-rails', '~> 0.8.1'
 
@@ -56,6 +62,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
 end
 
 
@@ -63,6 +70,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  # Use Dotenv for environment variables
+  gem 'dotenv', '~> 2.2.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -12,9 +12,9 @@ class Ability
     #   end
 
       user ||= User.new # guest user (not logged in)
-       if user.admin?
+       if user.superadmin_role?
          can :manage, :all
-       elsif user.regular?
+       elsif user.user_role?
          can :create, Property
          can :edit, Property
          can :show, Property

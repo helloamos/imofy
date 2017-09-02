@@ -27,7 +27,7 @@
   <%= devise_error_messages! %>
       <div class="input-group">
         <!-- <input type="password" class="form-control" placeholder="password"> -->
-		<%= f.email_field :email, autofocus: true, class: "form-control",  placeholder: "Email" %>
+		<%= f.email_field :email, autofocus: true, class: "form-control",  placeholder: "Email", required: true %>
         <div class="input-group-btn">
         
          <%= f.submit "Envoyer", class: "btn bg-purple" %>
