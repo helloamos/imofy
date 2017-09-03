@@ -1,0 +1,41 @@
+<div class="container">
+
+	<div class="contact-content">
+		<div class="box box-primary">
+			<h1 class="box-header">Nous contacter</h1>
+		  		<div class="box-body">
+
+					
+					
+				
+					<strong>N'hésitez pas à nous faire parvenir vos suggestions et/ou commentaires!</strong>
+					<br /><br />
+					<p>
+						Vous pouvez utiliser le formulaire ci-dessous pour nous contacter. Que ce soit pour des commentaires, des suggestions, pour un problème, simplement pour avoir de l'information ou de l'aide. 
+					</p>
+
+					<%= form_tag(send_email_path, method: "get") do %>
+						<div class="form-group">
+						   <%= text_field_tag :name, params[:name], placeholder: "Votre nom", class: "form-control", required: true %>
+						</div>
+						<div class="form-group">
+							<%= email_field_tag :email, params[:email], placeholder: "Votre e-mail", class: "form-control", required: true %>
+						</div>
+						<div class="form-group">
+							<%= select_tag :subject, options_for_select(User::SUJETS, params[:subject]), {prompt: "Sélectionner l'objet", class: "form-control", required: true} %>
+						</div>
+						<div class="form-group">
+							<%= text_area_tag :body, params[:body], rows: "8", placeholder: "Votre message" ,class: "form-control", required: true %>
+						</div>
+						<div class="form-group">
+							<%= submit_tag "ENVOYER", class: "btn bg-purple pull-right" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+
+
+	</div>
+
+
+</div>

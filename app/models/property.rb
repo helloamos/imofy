@@ -7,7 +7,7 @@ class Property < ActiveRecord::Base
 	# Paperclip usage
  	has_attached_file :thumbnail, styles: { medium: "300x150>", thumb: "100x100>", large: "960x526>" }, 
  	#:path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
- 	:path => ":rails_root/public/system/:class/:attachment/:id_partition/:style/:filename",
+ 	#:path => ":rails_root/public/system/:class/:attachment/:id_partition/:style/:filename",
 	#:url => "/system/:attachment/:id/:basename_:style.:extension",
 	:url => "/system/:class/:attachment/:id_partition/:style/:filename",
  	default_url: "/images/uploads/:style/missing.png",  validate_media_type: false
@@ -22,7 +22,7 @@ class Property < ActiveRecord::Base
 	belongs_to :status
 
 	# Date validation
-	validates_presence_of :name, :price,  :city, :neighborhood, :status, :unity_id, :property_type, :contract_type
+	validates_presence_of :name, :price,  :description, :city, :neighborhood, :status, :unity_id, :property_type, :contract_type
 	validates :slug, uniqueness: true 
 
 	

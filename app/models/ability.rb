@@ -17,6 +17,7 @@ class Ability
        elsif user.user_role?
          can :create, Property
          can :edit, Property
+         can :update, Property
          can :show, Property
        end
 

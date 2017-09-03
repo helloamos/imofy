@@ -4,6 +4,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   devise  :omniauthable, omniauth_providers: [:facebook, :google_oauth2]#, :confirmable, :lockable, :timeoutable ,
 
+  SUJETS = ["Suggestions","Commentaires","Signaler une erreur détectée","Signaler un profil", "Témoignage","Autres"]
+
   def self.create_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do | user |
       user.email = provider_data.info.email
