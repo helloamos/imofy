@@ -12,6 +12,14 @@
 
 # Ignore Shared
 
+config/puma_distant.rb
+/shared/*
+#shared/log/puma_access.log
+#shared/log/puma_error.log
+#shared/tmp/pids/puma.pid
+#shared/tmp/pids/puma.state
+
+
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
