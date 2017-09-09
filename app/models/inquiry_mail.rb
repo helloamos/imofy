@@ -1,0 +1,2 @@
+class InquiryMail < ApplicationRecord
+end

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <!-- <h1>Welcome to example.com, <%= @user.login %></h1> -->
+    <p>
+      Salut <%= @user.login %>,<br>
+      Un utilisateur souhaite avoir des information à propos de la propriété suivantte:<br>
+      <br>
+      Titre: <%= @property.name %><br> 
+      Lien: <%= @property_url %>,<br>
+      <br>
+    </p>
+    <p>
+      Pour ce connecter au site, suivez juste ce lien: <%= @url %>.<br>
+    </p>
+    <p>
+    Cordialement <br>
+    L'équipe de Imofy
+    </p>
+  </body>
+</html>

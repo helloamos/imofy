@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender name:</strong>
+  <%= @inquiry_mail.sender_name %>
+</p>
+
+<p>
+  <strong>Sender phone:</strong>
+  <%= @inquiry_mail.sender_phone %>
+</p>
+
+<p>
+  <strong>Sender email:</strong>
+  <%= @inquiry_mail.sender_email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @inquiry_mail.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @inquiry_mail.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_inquiry_mail_path(@inquiry_mail) %> |
+<%= link_to 'Back', inquiry_mails_path %>

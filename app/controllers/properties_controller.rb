@@ -12,7 +12,9 @@ class PropertiesController < ApplicationController
 	end
 
 	def show
-		@message = Message.new
+		
+		@inquiry_mail = InquiryMail.new
+		@property_url = property_url(@property)
 	end
 
 

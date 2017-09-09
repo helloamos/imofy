@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
     
+  resources :inquiry_mails
     #devise_for :users
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     get "/provacy-policy" => "pages#privacy_policy", as: :privacy_policy
     get "/partnaires" => "pages#partnaires", as: :partnaires
     get "/services" => "pages#services", as: :services
-    get '/send_email' => 'send_email#send', as: :send_email
+    get '/inquiry_email' => 'contact_email#inquiry', as: :inquiry_email
 
 
   
@@ -56,14 +57,15 @@ Rails.application.routes.draw do
 
     # Devise routes.
 
-    devise_for :users, path: 'auth', path_names: { 
+    devise_for :users, path: 'user', path_names: { 
       sign_in: 'login', 
       sign_out: 'logout', 
       password: 'secret', 
-      confirmation: 'verification', 
+      #confirmation: 'verification', 
       unlock: 'unblock', 
       registration: 'register', 
-      sign_up: 'cmon_let_me_in' 
+      sign_up: 'cmon_let_me_in',
+      confirmations: 'confirmations'
     }
 
 

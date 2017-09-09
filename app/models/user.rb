@@ -2,7 +2,9 @@ class User < ApplicationRecord
   extend FriendlyId
     friendly_id :login, use: :slugged
   # Include default devise modules. Others available are:
-  devise  :omniauthable, omniauth_providers: [:facebook, :google_oauth2]#, :confirmable, :lockable, :timeoutable ,
+  devise  :database_authenticatable, :registerable,:recoverable, :rememberable, :trackable, 
+  :confirmable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
 
   SUJETS = ["Suggestions","Commentaires","Signaler une erreur détectée","Signaler un profil", "Témoignage","Autres"]
 
@@ -21,8 +23,7 @@ class User < ApplicationRecord
 	validates :login, presence: true, uniqueness: true
   validates :company, presence: true, uniqueness: true
   validates :slug,  uniqueness: true
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  
 
   has_many :properties
   has_many :messages

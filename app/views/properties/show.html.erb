@@ -1,3 +1,4 @@
+
 <div class="container">
 	<!-- Property content -->
 	<div class="property-content">
@@ -41,7 +42,7 @@
 
 				<div class="box-body">
 
-                	<%= form_for(@message) do |form| %>
+                	<%= form_for(@inquiry_mail) do |form| %>
         
             			<div class="media agent-media">
             				<div class="media-left">
@@ -61,6 +62,23 @@
             						<i class="fa fa-map-marker" aria-hidden="true"></i>
             							<%= user_city(@property.user_id) %>
             					</div>
+
+     
+            					<div>
+            						
+            							<%=  form.hidden_field :user_id, value: @property.user_id %>
+            					</div>
+
+            					<div>
+            						
+            							<%=  form.hidden_field :property_id, value: @property.id %>
+            					</div>
+            					<div>
+            						
+            							<%=  form.hidden_field :property_url, value: @property_url %>
+            					</div>
+
+
             				</div>
             					
             				<div class="detail-title-inner">

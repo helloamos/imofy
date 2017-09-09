@@ -1,0 +1,42 @@
+<%= form_with(model: inquiry_mail, local: true) do |form| %>
+  <% if inquiry_mail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inquiry_mail.errors.count, "error") %> prohibited this inquiry_mail from being saved:</h2>
+
+      <ul>
+      <% inquiry_mail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sender_name %>
+    <%= form.text_field :sender_name, id: :inquiry_mail_sender_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sender_phone %>
+    <%= form.text_field :sender_phone, id: :inquiry_mail_sender_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sender_email %>
+    <%= form.text_field :sender_email, id: :inquiry_mail_sender_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :inquiry_mail_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :inquiry_mail_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

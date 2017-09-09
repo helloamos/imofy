@@ -1,11 +1,14 @@
 class ContactMailer < ApplicationMailer
-	#default from: 'skillaps@gmail.com'
+	add_template_helper(ApplicationHelper)
+	default from: 'imofy.official@gmail.com'
  
-  def contactez_nous(name,from, subject, body)
-    @name = name
-    @subject = subject
-    @from = from
-    @body  = body
-    mail(to: 'skillaps@gmail.com', subject: @subject)
+  def inquiry_email(agent_id, name, phone,mail, property_id, property_url)
+    @user = User.find(agent_id)
+    @property = Property.find(property_id)
+    @property_url = property_url
+    @url  = "http://localhost:3000"
+    #email_with_name = %("Hello" <"imofy.official@gmail.com">)
+    #mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: "salut.amos@gmail.com", subject: "Demande d'informations")
   end
 end

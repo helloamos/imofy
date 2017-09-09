@@ -52,6 +52,7 @@ gem 'omniauth-facebook', '~> 4.0'
 # Use ActiveRecord Sessions
 gem 'activerecord-session_store', '~> 1.0'
 gem 'devise-i18n'
+gem 'dotenv-rails', groups: [:development, :test]
 #gem 'tinymce-rails'
 #gem 'dropzonejs-rails', '~> 0.8.1'
 

@@ -52,4 +52,11 @@ module ApplicationHelper
 		user = User.find(id)
 		user.avatar.url(:thumb)
 	end
+
+	def property_title(id)
+		property = Property.find(id)
+		property.name
+	end
+
+
 end
