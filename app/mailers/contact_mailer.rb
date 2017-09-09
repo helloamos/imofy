@@ -1,5 +1,4 @@
 class ContactMailer < ApplicationMailer
-	add_template_helper(ApplicationHelper)
 	default from: 'imofy.official@gmail.com'
  
   def inquiry_email(agent_id, name, phone,mail, property_id, property_url)

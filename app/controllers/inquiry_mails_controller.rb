@@ -30,7 +30,7 @@ class InquiryMailsController < ApplicationController
 
     respond_to do |format|
       if @inquiry_mail.save
-        ContactMailer.inquiry_email(@inquiry_mail.user_id, @inquiry_mail.sender_name, @inquiry_mail.sender_phone,@inquiry_mail.sender_email, @inquiry_mail.property_id, @inquiry_mail.property_url).deliver_now
+        ContactMailer.inquiry_email(@inquiry_mail.user_id, @inquiry_mail.sender_name, @inquiry_mail.sender_phone, @inquiry_mail.sender_email, @inquiry_mail.property_id, @inquiry_mail.property_url).deliver_now
         format.html { redirect_to property, notice: 'Message envoyé avec succès.' }
         format.json { render :show, status: :created, location: @inquiry_mail }
       else
