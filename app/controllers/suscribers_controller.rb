@@ -28,10 +28,10 @@ class SuscribersController < ApplicationController
 
     respond_to do |format|
       if @suscriber.save
-        format.html { redirect_to suscribe_path, notice: 'Suscriber was successfully created.' }
+        format.html { redirect_to suscribe_path, notice: t(:suscribed) }
         format.json { render :show, status: :created, location: suscribe_path }
       else
-        format.html { redirect_to suscribe_path, alert: 'Suscriber already exists for this entry.'}
+        format.html { redirect_to suscribe_path, alert: t(:suscriber_exist)}
         format.json { render json: @suscriber.errors, status: :unprocessable_entity }
       end
     end

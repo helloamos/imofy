@@ -31,3 +31,5 @@
 
 fr:
   hello: "Hello world"
+  suscribed: "Vous êtes abonné avec succès!"
+  suscriber_exist: "Cette adresse email existe déjà dans nos base donées!"
