@@ -8,11 +8,11 @@
 /.bundle
 
 # Ignore puma
-/config/puma.rb
+config/puma.rb
 
 # Ignore Shared
 
-config/puma_distant.rb
+#/config/puma_distant.rb
 /shared/*
 #shared/log/puma_access.log
 #shared/log/puma_error.log
