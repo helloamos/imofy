@@ -22,7 +22,7 @@ class Property < ActiveRecord::Base
 	belongs_to :status
 
 	# Date validation
-	validates_presence_of :name, :price,  :description, :city, :neighborhood, :status, :unity_id, :property_type, :contract_type
+	validates_presence_of :name, :price, :city, :neighborhood, :status, :unity_id, :property_type, :contract_type
 	validates :slug, uniqueness: true 
 
 	

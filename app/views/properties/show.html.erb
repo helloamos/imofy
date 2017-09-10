@@ -145,7 +145,9 @@
 							<div class="row related-property">
 								<div class="col-xs-3">
 									<div class= "related-property-thumb">
+										<%= link_to property_show_path(property) do %>
 										<%= image_tag property.thumbnail.url(:medium) %>
+										<% end %>
 									</div>
 								</div>
 								<div class="col-xs-9">

@@ -73,7 +73,9 @@
 				<div class="col-md-4">	
 					<div class="property-item">
 						<div class="property-thumbnail">
-							<%= image_tag e.thumbnail.url(:large) %>
+							<%= link_to property_show_path(e) do %>
+								<%= image_tag e.thumbnail.url(:large) %>
+							<% end %>
 							<div class="label-wrap label-right hide-on-list">
                         		<span class="label-status label-status-7 label label-default">
                         			<%= contract_type(e.contract_type_id) %>

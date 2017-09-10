@@ -23,6 +23,7 @@ class User < ApplicationRecord
 	validates :login, presence: true, uniqueness: true
   validates :company, presence: true, uniqueness: true
   validates :slug,  uniqueness: true
+  validates :email, uniqueness: true
   
 
   has_many :properties
