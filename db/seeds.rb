@@ -10,10 +10,10 @@
 
 
 # Admin
-User.create!(id: 1, login: "Bothso",  company: "BOTH SOLUTIONS", email: "both.solutions@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
-User.create!(id: 2, login: "Skillaps",  company: "SKILLAPS", email: "skillaps@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
-User.create!(id: 3, login: "Active",  company: "ACTIVE SOLUTIONS", email: "active.solutions@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
-User.create!(id: 4, login: "Kernel",  company: "THEKERNEL", email: "amosxzibitde88@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
+#User.create!(id: 1, login: "Bothso",  company: "BOTH SOLUTIONS", email: "both.solutions@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
+#User.create!(id: 2, login: "Skillaps",  company: "SKILLAPS", email: "skillaps@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
+#User.create!(id: 3, login: "Active",  company: "ACTIVE SOLUTIONS", email: "active.solutions@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
+#User.create!(id: 4, login: "Kernel",  company: "THEKERNEL", email: "amosxzibitde88@gmail.com",  password: "AMOSXZIBITDE88", password_confirmation: "AMOSXZIBITDE88")
 
 
 # Contract Type
