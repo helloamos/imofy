@@ -55,9 +55,12 @@ gem 'devise-i18n'
 gem 'dotenv-rails', groups: [:development, :test, :production]
 #gem 'tinymce-rails'
 #gem 'dropzonejs-rails', '~> 0.8.1'
+#gem 'loofah', '~> 2.2', '>= 2.2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#gem 'whenever', '~> 0.10.0', require: false
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,6 +74,12 @@ end
 
 
 group :development do
+  # For deployment
+	gem 'capistrano', '~> 3.10'
+	gem 'capistrano-rails', '~> 1.3', '>= 1.3.1'
+	#gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.3'
+	gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+	gem 'capistrano-rvm', '~> 0.1.2'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   # Use Dotenv for environment variables
