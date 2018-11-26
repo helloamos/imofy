@@ -3,10 +3,10 @@ lock "~> 3.11.0"
 
 
 set :stages, %w(production staging)
-set :default_stage, "staging"
+set :default_stage, "production"
 
 set :application, "Imofy"
-set :repo_url, "git@gitlab.com:thekernel/imofy.git"
+set :repo_url, "https://github.com/helloamos/imofy.git"
 
 
 # Default branch is :master
@@ -33,8 +33,8 @@ append :linked_files, "config/database.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 
-set :nginx_config_name, 'imofy.xyz'
-set :nginx_server_name, 'imofy.xyz'
+set :nginx_config_name, 'imofy'
+set :nginx_server_name, 'imofy'
 set :puma_workers,1
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

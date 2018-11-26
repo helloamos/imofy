@@ -7,11 +7,11 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-set :application, "imofy.xyz"               # the name of your website - should also be the name of the directory
-set :deploy_to, "/home/thkernel/projects/imofy.xyz"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
+set :application, "Imofy"               # the name of your website - should also be the name of the directory
+set :deploy_to, "/home/ubtuntu/app/imofy"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
 set :rails_env, "production"
 
-server "imofy.xyz", user: "root", roles: %w{app db web}, ssh_options: {forward_agent: true}
+server "18.222.211.210", user: "ubuntu", roles: %w{app db web}, ssh_options: {forward_agent: true}
 
 
 # role-based syntax
@@ -64,3 +64,10 @@ server "imofy.xyz", user: "root", roles: %w{app db web}, ssh_options: {forward_a
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+set :pty, true
+set :ssh_options, {
+  forward_agent: true,
+  auth_methods: ["publickey"],
+  keys: ["~/projects/rails/imofy/Imofy.pem"]
+}
