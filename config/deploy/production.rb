@@ -8,7 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 set :application, "Imofy"               # the name of your website - should also be the name of the directory
-set :deploy_to, "/home/ubtuntu/app/imofy"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
+set :deploy_to, "/home/ubuntu/app/imofy"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
 set :rails_env, "production"
 
 server "18.222.211.210", user: "ubuntu", roles: %w{app db web}, ssh_options: {forward_agent: true}
