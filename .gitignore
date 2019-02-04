@@ -35,3 +35,4 @@ tmp/*
 /yarn-error.log
 
 .byebug_history
+/imofy-ec2.pem
