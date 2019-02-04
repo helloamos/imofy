@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     
     # Home route.
-    root to: "pages#newsletter_suscribe"
+    root to: "home#index"
 
     # Named routes.
     get "/home" => "home#index"

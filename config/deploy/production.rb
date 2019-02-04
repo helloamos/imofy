@@ -8,10 +8,10 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 set :application, "Gessys"               # the name of your website - should also be the name of the directory
-set :deploy_to, "/home/ubuntu/apps/gessys.prod"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
+set :deploy_to, "/home/ubuntu/apps/imofy.prod"   # the path to your new deployment directory on the server - by default, the name of the application (e.g. "/var/www/sites/example.com")
 set :rails_env, "production"
 
-server "54.67.59.134", user: "ubuntu", roles: %w{app db web}, ssh_options: {forward_agent: true}
+server "13.52.78.238", user: "ubuntu", roles: %w{app db web}, ssh_options: {forward_agent: true}
 
 
 # role-based syntax
@@ -69,5 +69,5 @@ set :pty, true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ["~/projects/rails/gessys/gessys-ec2.pem"]
+  keys: ["~/projects/rails/imofy/imofy-ec2.pem"]
 }
