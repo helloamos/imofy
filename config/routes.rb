@@ -57,18 +57,28 @@ Rails.application.routes.draw do
 
     # Devise routes.
 
-    devise_for :users, path: 'user', path_names: { 
-      sign_in: 'login', 
-      sign_out: 'logout', 
-      password: 'secret', 
-      #confirmation: 'verification', 
-      unlock: 'unblock', 
-      registration: 'register', 
-      sign_up: 'cmon_let_me_in',
-      confirmations: 'confirmations'
-    }
+   
 
 
+
+    devise_for :users, path: '', controllers: { 
+     registrations: "devise/registrations",
+     confirmations: 'devise/confirmations',
+     passwords: "devise/passwords",
+     sessions: "devise/sessions"
+         
+     }, 
+     path_names: {
+         sign_in: 'login', 
+         sign_out: 'logout', 
+         password: 'secret', 
+         confirmation: 'verification', 
+         unlock: 'unblock', 
+         registration: 'signup', 
+         sign_up: '' 
+     }
+
+  
     
 
     resources :messages
