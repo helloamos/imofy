@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: 'contact.imofy@gmail.com'
+	default from: 'register@imofy.ml'
  
   def welcome_email(user)
     @user = user

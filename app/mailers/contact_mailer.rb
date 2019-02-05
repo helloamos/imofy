@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-	default from: 'imofy.official@gmail.com'
+	default from: 'register@imofy.ml'
  
   def inquiry_email(agent_id, name, phone,mail, property_id, property_url)
     @user = User.find(agent_id)

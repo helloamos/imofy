@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'imofy.official@gmail.com'
+  default from: 'register@imofy.ml'
   layout 'mailer'
 end
