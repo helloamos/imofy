@@ -87,16 +87,17 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { host: 'imofy.ml' }
+  config.action_mailer.default_url_options = { host: 'http://imofy.ml' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name:      'register@imofy.ml',
     password:       'AMOSXZIBITDE88',
     domain:         'imofy.ml',
-    address:       'smtp.gmail.com',
-    port:          '587',
+    address:       'mail.planetemail.net',
+    port:          '465',
     authentication: :plain,
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    :ssl => true
   }
 
   # Use a different logger for distributed setups.
