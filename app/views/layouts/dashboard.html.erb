@@ -9,41 +9,29 @@
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body>
 
-
-<div class="wrapper">
-
- <%= render('layouts/partials/dheader') %>
-  <!-- Left side column. contains the logo and sidebar -->
-<%= render('layouts/partials/aside') %>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <div class="wrapper">
+      <!-- Left side column. contains the logo and sidebar -->
+      <section>
+        <%= render('layouts/partials/aside/aside') %>
+      </section>
     
+      <section>
+        <%= render('layouts/partials/header/header') %>
+            <%= render('layouts/partials/dheader') %>
+      </section>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+      <!-- Main content -->
+      <section class="content container-fluid">
+          <%= yield %>
+      </section>
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+      <section>
+        <%= render('layouts/partials/footer/footer') %>
+      </section>
 
-        <%= yield %>
+    </div>
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-<%= render('layouts/partials/dfooter') %>
-
-
-</div>
-<!-- ./wrapper -->
-
-
-  	
-    
   </body>
 </html>

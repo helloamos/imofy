@@ -11,13 +11,24 @@
 // about supported directives.
 //
 //= require jquery
+//= require rails-ujs
 
 //= require bootsy
-//= require rails-ujs
+
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require bootstrap
+//= require toastr
+//= require rails.validations
+//= require intlTelInput
+//= require bracketplusadmin-14/js/bracket
+//= require bracketplusadmin-14/js/dashboard
+//= require bracketplusadmin-14/js/map.shiftworker
+//= require bracketplusadmin-14/js/ResizeSensor
+// require bracketplusadmin-14/js/echarts/echarts.min
+
 //= require social-share-button
-//= require_tree .
+// require_tree .
 $(function() {
   $('#pictureInput').on('change', function(event) {
     var files = event.target.files;

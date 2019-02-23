@@ -25,11 +25,11 @@ Rails.application.routes.draw do
     get "/services" => "pages#services", as: :services
     get '/inquiry_email' => 'contact_email#inquiry', as: :inquiry_email
 
-
+     get 'dashboard' => 'dashboard#index', as: :dashboard
   
     # Admin routes.
     scope '/admin' do
-      resources :dashboard
+      
       resources :properties
       resources :statuses
       resources :contract_types
