@@ -27,15 +27,14 @@ Rails.application.routes.draw do
 
      get 'dashboard' => 'dashboard#index', as: :dashboard
   
-    # Admin routes.
-    scope '/admin' do
+   
       
       resources :properties
       resources :statuses
       resources :contract_types
       resources :property_types
       resources :unities
-    end
+  
 
     # Delete routes.
     resources :properties do
@@ -62,10 +61,10 @@ Rails.application.routes.draw do
 
 
     devise_for :users, path: '', controllers: { 
-     registrations: "devise/registrations",
-     confirmations: 'devise/confirmations',
-     passwords: "devise/passwords",
-     sessions: "devise/sessions"
+     registrations: "users/registrations",
+     confirmations: 'users/confirmations',
+     passwords: "users/passwords",
+     sessions: "users/sessions"
          
      }, 
      path_names: {

@@ -1,51 +1,37 @@
 
+<div class="container-fuild">
+   
 
-<!-- Content Header (Page header) -->
-<section class="content-header">
-         <div class="pull-left">
-             <h1>Propriétés</h1>
-        <!-- <small>Liste des propriétés</small> -->
-         </div> 
 
-          <h1>
-       
-      </h1>
+
+
+<!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+     
+       <!-- Content Header (Page header) -->
+    <div class="page-heading">
+            <div class="text-left">
+             
+            </div> 
+
            
-            <div class="pull-right">
-              <%= link_to "AJOUTER",  new_property_path , class: "btn bg-purple" %>
-            </div>
-          
-
-
-</section>
-
-<!-- Main content -->
-<section class="content">
-
-    <div class="row">
-        <div class="col-sm-12">
-    
+            
+        <div class="text-right">
+        <%= link_to "AJOUTER",  new_property_path , class: "btn btn-info" %>
         </div>
+            
     </div>
 
-    <div class="row">
-        <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Mes propriétés</h3>
+      <div class="br-pagebody">
+        <div class="br-section-wrapper">
+          <h6 class="br-section-label">Liste des propriétés</h6>
+          <p class="br-section-text"></p>
 
-              <div class="box-tools pull-right">
-                    <!-- Right content here -->
-                </div>
-
-            </div>
-
-
-          <div class="box-body">
-             <!-- Content here -->
-             <!-- <table id="example2" class="table table-bordered table-striped">-->
-             <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
+          <div class="table-wrapper">
+            <table id="datatable1" class="table display responsive nowrap">
+              <thead>
+               
+                <tr>
                        <th>Image</th>
                       <th>Nom</th>
                       <th>Type</th>
@@ -54,28 +40,25 @@
                       <th>Quartier</th>
                       <th>Statut</th>
                       
-                      <th style="width: 60px"></th>
+                      <th >Actions</th>
                       
                     </tr>
-                  </thead>
-                  <tbody class="client-index">
-                    <%= render('index') %>
-                  </tbody>
-              </table>
+              </thead>
+              <tbody class="properties-index">
+               <%= render('index') %>
+                
+              </tbody>
+            </table>
           </div>
 
-          <!--<div class="box-footer hidden-xs hidden-sm">
-            Section footer content here 
-          </div>-->
+         
 
-          <div class="row page-navi">
-      <%= will_paginate @properties, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %>
-        
-    </div>
-        
+          
+
         </div>
+      </div>
+     
     </div>
+    <!-- ########## END: MAIN PANEL ########## -->
 
-    
-
-   
+</div>

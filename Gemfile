@@ -41,6 +41,7 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'font-awesome-sass', '~> 5.6', '>= 5.6.1'
 gem 'country_select', '~> 3.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem "paperclip", ">= 5.2.0"
 #gem 'trix', '~> 0.11.0'
 gem 'bootsy', '~> 2.4'
