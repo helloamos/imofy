@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-body">
+				<%= form_tag(simple_search_path, method: "get", class: "search-form") do %>
+
+				<div class="row">
+
+					
+						<div class="col-md-3">
+							<div class="form-group">
+					  		<%= select_tag :property_type, options_from_collection_for_select(@property_types, :id, :name), {prompt:"Type de propriété" , class: "form-control", required: true} %>
+					  		</div>
+					  	</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  		<%= select_tag(:contract_type, options_from_collection_for_select(@contract_types, :id, :name), {prompt:"Type d'offre" , class: "form-control", required: true})%>
+					  		</div>
+					  	</div>
+
+							<!--
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  			<%= number_field_tag(:q, nil,  class: "form-control", placeholder: "Prix", required: true) %>
+					  		</div>
+					  	</div> 
+							-->
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+					  		<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Ville", required: true) %>
+					  		</div>
+					  	</div>
+
+					  	<div class="col-md-2">
+					  		<div class="form-group">
+								
+					  			<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Quartier", required: true) %>
+					  		</div>
+					  	</div>
+						<div class="col-md-3">
+							<div class="form-group">
+					  			<%= submit_tag("RECHERCHER", class: "btn btn-primary btn-block") %>
+							</div>
+						</div>
+
+				
+
+				  
+				  </div>
+				<% end %>
+				
+			</div>
+            </div>

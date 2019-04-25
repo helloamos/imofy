@@ -6,54 +6,7 @@
 			  <p>Appartement, Bureau, Terrain etc...</p>
 		 
 			</div>
-		    <div class="jumbotron-form text-center">
-				<%= form_tag(simple_search_path, method: "get", class: "search-form") do %>
-
-				<div class="row">
-
-					
-						<div class="col-md-2">
-							<div class="form-group">
-					  		<%= select_tag :property_type, options_from_collection_for_select(@property_types, :id, :name), {prompt:"Type de propriété" , class: "form-control", required: true} %>
-					  		</div>
-					  	</div>
-
-					  	<div class="col-md-2">
-					  		<div class="form-group">
-					  		<%= select_tag(:contract_type, options_from_collection_for_select(@contract_types, :id, :name), {prompt:"Type d'offre" , class: "form-control", required: true})%>
-					  		</div>
-					  	</div>
-
-					  	<div class="col-md-2">
-					  		<div class="form-group">
-					  			<%= number_field_tag(:q, nil,  class: "form-control", placeholder: "Prix", required: true) %>
-					  		</div>
-					  	</div>
-					  	<div class="col-md-2">
-					  		<div class="form-group">
-					  		<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Ville", required: true) %>
-					  		</div>
-					  	</div>
-
-					  	<div class="col-md-2">
-					  		<div class="form-group">
-								
-					  			<%= text_field_tag(:q, nil,  class: "form-control", placeholder: "Quartier", required: true) %>
-					  		</div>
-					  	</div>
-						<div class="col-md-2">
-							<div class="form-group">
-					  			<%= submit_tag("RECHERCHER", class: "btn bg-maroon btn-block btn-flat") %>
-							</div>
-						</div>
-
-				
-
-				  
-				  </div>
-				<% end %>
-				
-			</div>
+		    <%= render "home/partials/search" %>
 		</div>
 	</div>
 
@@ -62,75 +15,5 @@
 
 <!-- FEATURED SECTION -->
 <div class="section-featured">
-<div class="container">
-		<div class="section-title">
-			<h1>Propriétés à la une</h1>
-		</div>
-
-		<div class="row">
-
-			<% @featured.each do |e| %>
-				<div class="col-md-4">	
-					<div class="property-item">
-						<div class="property-thumbnail">
-							<%= link_to property_show_path(e) do %>
-								<%= image_tag e.thumbnail.url(:large) %>
-							<% end %>
-							<div class="label-wrap label-right hide-on-list">
-                        		<span class="label-status label-status-7 label label-default">
-                        			<%= contract_type(e.contract_type_id) %>
-                        		</span>
-                        		<span class="label label-default status-<%= e.status_id %>">
-                        			<%= status(e.status_id) %>
-                        		</span>                    
-                        	</div>
-
-							<div class="price">
-								<span class="item-price">
-									<%= number_with_precision(e.price, delimiter: " ", separator: "", precision: 0) %>
-								</span>
-
-								<span class="item-unity">
-									/<%= unity_name(e.unity_id) %>
-								</span>
-							</div>	
-						</div>
-						<div class="property-title">
-							<h2><%= link_to e.name, property_show_path(e) %></h2>
-							
-							
-						</div>
-						<div class="property-address">
-						<%= e.neighborhood %>, <%= e.city %>
-						</div>
-					   
-					    <div class="item-foot">
-					    	<div class="item-foot-left">
-					    		<p class="prop-user-agent">
-						    		<i class="fa fa-user"></i> 
-						    		<%= user_company(e.user_id) %>
-					    		</p>
-					    	</div>
-					    	<div class="item-foot-right">
-					    		<p class="prop-date">
-					    		<i class="fa fa-calendar"></i>
-					    		<%= time_ago_in_words(e.created_at) %>
-					    		</p>
-					    	</div>
-					    </div>	
-					</div>
-
-
-				</div>
-
-
-			<% end %> 
-		</div>
-
-		 <div class="row page-navi">
-      <%= will_paginate @featured, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %>
-        
-    </div>
-
-</div>
+	<%= render 'home/partials/featured-properties' %>
 </div>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
     # Named routes.
     get "/home" => "home#index"
+    get "/dashboard" => "dashboard#index", as: :dashboard
     get "/landing" => "pages#landing_page", as: :landing_page
     get "/suscribe" => "pages#newsletter_suscribe", as: :suscribe
     get "/property/:id" => "properties#show", as: :property_show
@@ -24,10 +25,11 @@ Rails.application.routes.draw do
     get "/partnaires" => "pages#partnaires", as: :partnaires
     get "/services" => "pages#services", as: :services
     get '/inquiry_email' => 'contact_email#inquiry', as: :inquiry_email
+    get "/properties/all" => "home#properties", as: :load_all_properties
 
 
-  
-    # Admin routes.
+=begin
+     Admin routes.
     scope '/admin' do
       resources :dashboard
       resources :properties
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
       resources :property_types
       resources :unities
     end
-
+=end
     # Delete routes.
     resources :properties do
           get 'delete'
@@ -62,10 +64,10 @@ Rails.application.routes.draw do
 
 
     devise_for :users, path: '', controllers: { 
-     registrations: "devise/registrations",
-     confirmations: 'devise/confirmations',
-     passwords: "devise/passwords",
-     sessions: "devise/sessions"
+     registrations: "users/registrations",
+     confirmations: 'users/confirmations',
+     passwords: "users/passwords",
+     sessions: "users/sessions"
          
      }, 
      path_names: {
@@ -77,7 +79,6 @@ Rails.application.routes.draw do
          registration: 'signup', 
          sign_up: '' 
      }
-
   
     
 

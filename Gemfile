@@ -34,7 +34,9 @@ gem 'jbuilder', '~> 2.5'
 # Additional gem
 gem 'rails-i18n', '~> 5.0', '>= 5.0.4'
 gem 'devise', '~> 4.3'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+#gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'sassc', '~> 1.12', '>= 1.12.1'
+gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 #gem 'fontawesome-rails', '~> 4.0', '>= 4.0.3.2'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'country_select', '~> 3.0'
@@ -55,7 +57,8 @@ gem 'dotenv-rails', groups: [:development, :test, :production]
 #gem 'tinymce-rails'
 #gem 'dropzonejs-rails', '~> 0.8.1'
 #gem 'loofah', '~> 2.2', '>= 2.2.2'
-
+gem 'client_side_validations'
+gem 'intl-tel-input-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #gem 'whenever', '~> 0.10.0', require: false

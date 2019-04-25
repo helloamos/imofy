@@ -6,21 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag 'favicon.ico' %>
   </head>
-  <% if notice %>
-      <div id="notice_wrapper">
 
-        <p class="alert alert-success"><%= notice %></p>
-      </div>
-    <% elsif alert %>
-      <div id="alert_wrapper">
-        <p class="alert alert-danger"><%= alert %></p>
-      </div>
-  <% end %>
+  <body>
+  	<div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+	    <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
 
-  <body class="hold-transition login-page">
-  	
-    <%= yield %>
+			<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+			<%= yield %>
+		</div>
+	</div>
   </body>
 </html>

@@ -1,0 +1,72 @@
+<div class="featured-properties">
+<div class="container">
+	<div class="section-title text-center">
+		<h2>Propriétés à la une</h2>
+	</div>
+
+
+	<div class="row">
+
+		<% @featured.each do |e| %>
+
+            <div class="col-md-4 property-item">	
+                <div class="card">
+                    <div class="card-body">
+						<div class="contract-and-availability">
+							<div class="contract">
+								<%= contract_type(e.contract_type_id) %>
+							</div>
+							<div class="status-<%= status(e.status_id).downcase %>">
+								<%= status(e.status_id) %>
+							</div>                    
+						</div>
+						<div class="card-thumbnail">
+							<%= image_tag e.thumbnail.url(:large), class: "card-img-top", alt:"Card image cap" %>
+						</div>
+						<div class="card-title">
+							<h5> <%= link_to e.name, property_show_path(e) %>  </h5>                         
+						</div>
+                            
+						
+						<div class="price">
+							<i class="fa fa-money" aria-hidden="true"></i>
+							<span class="item-price">
+								<%= number_with_precision(e.price, delimiter: " ", separator: "", precision: 0) %>
+							</span>
+
+							<span class="item-unity">
+								/<%= unity_name(e.unity_id) %>
+							</span>
+						</div>	
+						<div class="property-address">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							<%= e.neighborhood %>, <%= e.city %>
+						</div>
+					   
+						<div class="item-foot">
+							<div class="item-foot-left">
+								
+									<i class="fa fa-user"></i> 
+									<%= user_company(e.user_id) %>
+								
+							</div>
+							<div class="item-foot-right">
+								
+								<i class="fa fa-calendar"></i>
+								<%= time_ago_in_words(e.created_at) %>
+								
+							</div>
+						</div>	
+                    </div>
+                </div>	
+			</div>
+		<% end %> 
+	</div>
+
+	<div class="row load-more">
+		<!-- <%= will_paginate @featured, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %> -->
+		<%= link_to "Plus de propriétés", load_all_properties_path, class: "btn btn-outline-primary load-more-button" %>
+	</div>
+
+</div>
+</div>

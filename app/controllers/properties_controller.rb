@@ -1,14 +1,14 @@
 class PropertiesController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-	before_action :set_all_data, only: [:index, :edit, :update, :new]
+	before_action :set_all_data, only: [:create, :edit, :update, :new]
 	before_action :set_property, only: [:show, :edit, :update, :destroy]
 	before_action :related_post, only: [:show]
-
+	layout "dashboard"
 	
 
 	def index
 		@properties = current_user.properties.order(created_at: :desc).paginate(:page => params[:page], :per_page => 8)
-		render :layout => "dashboard"
+		#render :layout => "dashboard"
 	end
 
 	def show
@@ -19,12 +19,16 @@ class PropertiesController < ApplicationController
 
 
 	def edit
-		render :layout => "dashboard"
+		#render :layout => "dashboard"
 	end
 
 	def new
 		@property = Property.new
-		render :layout => "dashboard"
+		@contract_types = ContractType.all
+		@property_types = PropertyType.all
+		@status = Status.all
+		@unities = Unity.all
+		
 	end
 
 	
@@ -84,7 +88,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def property_params
-		params.require(:property).permit(:name, :description, :property_type_id, :contract_type_id, :price, :city, :neighborhood, :status_id, :thumbnail)
+		params.require(:property).permit(:name, :description, :property_type_id, :contract_type_id, :unity_id, :price, :city, :neighborhood, :status_id, :thumbnail)
 	end
 
 	def set_all_data

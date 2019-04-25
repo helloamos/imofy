@@ -10,15 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require style
- *= require bootsy
+ * require_tree .
+ *= require_self
  */
-
- @import "bootstrap-sprockets";
- @import "bootstrap";
+ //@import "bootstrap";
  @import "font-awesome";
- @import "social-share-button";
- @import  "AdminLTE";
- @import "_all-skins";
- @import "pro";
- @import url('https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,hebrew,latin-ext');
+ @import "toastr";
+ @import "style";
+ @import "scss/bracket.min";
+ @import "lib/datatables.net-dt/css/jquery.dataTables.min";
+ @import "lib/datatables.net-responsive-dt/css/responsive.dataTables.min";

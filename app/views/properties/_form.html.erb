@@ -1,159 +1,137 @@
 <div class="new-property">
-<%= form_for(@property) do |f| %>
- <% if @property.errors.any? %>
-    <div class="error_explanation">
-      <h3><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+	<%= form_for(@property) do |f| %>
+		<% if @property.errors.any? %>
+			<div class="error_explanation">
+			<h3><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
-      <ul>
-      <% @property.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<div class="row">
-<div class="col-md-8">
-	<!-- general form elements -->
-	<div class="box box-primary">
-		
-		<!-- /.box-header -->
-		<!-- form start -->
-		
-			<div class="box-body">
+			<ul>
+			<% @property.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+			</div>
+		<% end %>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="components-panel">
+				<div class="components-panel__body">
+					<div class="form-group">
+						<%= f.label "Titre" %>
+						<%= f.text_field :name, class: "form-control", placeholder: "Titre" %>
+					</div>
+
+					<div class="form-group">
+						<%= f.bootsy_area :description, rows: 12, class: "form-control", placeholder: "Description" %>
+					</div>
+				</div>
+			</div>
+	
+
+		<div class="components-panel">
+			<div class="components-panel__body-title">
+				<h2>Localisation</h2>
+			</div>
+			<div class="components-panel__body">
+
 				<div class="form-group">
-					<%= f.label "Titre" %>
-					<%= f.text_field :name, class: "form-control", placeholder: "Titre" %>
+					<%= f.label "Ville" %>
+					<%= f.text_field :city, class: "form-control", placeholder: "Ville" %>
 				</div>
 
 				<div class="form-group">
-					<%= f.bootsy_area :description, rows: 12, class: "form-control", placeholder: "Description" %>
+					<%= f.label "Quartier" %>
+					<%= f.text_field :neighborhood, class: "form-control", placeholder: "Quartier" %>
 				</div>
 				
 
-				<!-- /.box-body -->
 			</div>
-			
+		</div>
+
 		
-	</div>
-	<!-- /.box -->
 
-	<div class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Localisation</h3>
-		</div>
-		<div class="box-body">
-
-			<div class="form-group">
-				<%= f.label "Ville" %>
-				<%= f.text_field :city, class: "form-control", placeholder: "Ville" %>
-			</div>
-
-			<div class="form-group">
-				<%= f.label "Quartier" %>
-				<%= f.text_field :neighborhood, class: "form-control", placeholder: "Quartier" %>
-			</div>
-			
-
-		</div>
 	</div>
 
-	<div class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Statut</h3>
-		</div>
-		<div class="box-body">
-			<div class="form-group">
-				<%= f.label "Statut"%>
-				<%= f.collection_select :status_id, @status, :id, :name, {prompt: "Statut"}, class: "form-control" %>
+	<div class="col-md-4">
+		<div class="components-panel">
+			<div class="components-panel__body-title">
+				<h2>Organisation</h2>
 			</div>
-		</div>
-	</div>
+			<div class="components-panel__body">
 
-</div>
-
-<div class="col-md-4">
-	<div class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Organisation</h3>
-		</div>
-		<div class="box-body">
-
-			<div class="form-group">
-				<%= f.label "Type de propriété" %>
-				<%= f.collection_select :property_type_id, @property_types, :id, :name, {prompt: "Type de propriété"}, class: "form-control" %>
-			</div>
-			<div class="form-group">
-				<%= f.label "Type de contrat" %>
-				<%= f.collection_select :contract_type_id, @contract_types, :id, :name, {prompt: "Type de contrat"}, class: "form-control" %>
-			</div>
-
-			
-
-		</div>
-	</div>
-
-	
-
-	<div class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Prix & Unité</h3>
-		</div>
-		<div class="box-body">
-
-			<div class="form-group">
-				<div class="col-xs-7">
-
-				<%= f.number_field :price, class: "form-control", placeholder: "Prix" %>
-					
+				<div class="form-group">
+					<%= f.label "Type de propriété" %>
+					<%= f.collection_select :property_type_id, @property_types, :id, :name, {prompt: "Type de propriété"}, class: "form-control" %>
 				</div>
-				<div class="col-xs-5">
-
-				<%= f.collection_select :unity_id, @unities, :id, :name, {prompt: "Unité"}, class: "form-control" %>
+				<div class="form-group">
+					<%= f.label "Type de contrat" %>
+					<%= f.collection_select :contract_type_id, @contract_types, :id, :name, {prompt: "Type de contrat"}, class: "form-control" %>
 				</div>
-
-			</div>
-			
-
-		</div>
-	</div>
-
-	<div class="box box-primary">
-		<div class="box-header with-border">
-			<h3 class="box-title">Image</h3>
-		</div>
-		<div class="box-body">
-
-			<div class="form-group">
-				<div class="thumbnail-preview">
-					<%= image_tag @property.thumbnail.url(:medium) %>
-				</div>	
-				<%= f.file_field :thumbnail,   id: "pictureInput", placeholder: "Image" %>
-				<div class="insert_image_link">
-					 <a href="" id="pictureInputLink" class="btn bg-maroon">Insérer une image</a>
+				<div class="form-group">
+					<%= f.label "Statut"%>
+					<%= f.collection_select :status_id, @status, :id, :name, {prompt: "Statut"}, class: "form-control" %>
 				</div>
 			</div>
-			
-
 		</div>
-	</div>
 
-	<div class="box box-primary">
-
-		<div class="box-body">
-
-			<div class="form-group">
-				<%= f.submit "PUBLIER", class: "btn bg-purple btn-block " %>
+		<div class="components-panel">
+			<div class="components-panel__body-title">
+				<h2>Prix & Unité</h2>
 			</div>
-			
+			<div class="components-panel__body">
 
+				<div class="form-group">
+					<div class="col-xs-7">
+						<%= f.number_field :price, class: "form-control", placeholder: "Prix" %>
+						
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-5">
+
+					<%= f.collection_select :unity_id, @unities, :id, :name, {prompt: "Unité"}, class: "form-control" %>
+					</div>
+
+				</div>
+				
+
+			</div>
 		</div>
-	</div>
 
-</div>
-</div>
-<div class="row">
+		<div class="components-panel">
+			<div class="components-panel__body-title">
+				<h2>Image</h2>
+			</div>
+			<div class="components-panel__body">
+
+				<div class="form-group">
+					<div class="thumbnail-preview">
+						<%= image_tag @property.thumbnail.url(:medium) %>
+					</div>	
+					<%= f.file_field :thumbnail,   id: "pictureInput", placeholder: "Image" %>
+					<div class="insert_image_link">
+						<a href="" id="pictureInputLink" class="btn bg-maroon">Insérer une image</a>
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+
+		<div class="components-panel">
+
+			<div class="components-panel__body">
+
+				<div class="form-group">
+					<%= f.submit "Publier", class: "btn btn-primary btn-block tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1 " %>
+				</div>
+				
+
+			</div>
+		</div>
 
 	</div>
+</div>
+
 <% end %>
 
 </div>

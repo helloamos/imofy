@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Imofy</title>
-    <%= csrf_meta_tags %>
+	<head>
+		<title><%= "Tableau de bord - Imofy " %></title>	
+    	<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag 'favicon.ico' %>
-  </head>
+  <body >
+		
+		<%= render :partial => 'layouts/partials/flash_messages', :flash => flash %>
+		<!-- Left Sidebar -->
+			<%= render('layouts/partials/dashboard/header') %>
 
-  <body class="hold-transition skin-blue sidebar-mini">
+		<!-- End Left sidebar -->
+<%= render('layouts/partials/dashboard/sidebar') %>
+		<div class="br-mainpanel">
+				
 
+					<%= yield %>
+				  
 
-<div class="wrapper">
+		</div>
+	  <%= render('layouts/partials/dashboard/footer') %>
 
- <%= render('layouts/partials/dheader') %>
-  <!-- Left side column. contains the logo and sidebar -->
-<%= render('layouts/partials/aside') %>
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-
-    <!-- Main content -->
-    <section class="content container-fluid">
-
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-
-        <%= yield %>
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-<%= render('layouts/partials/dfooter') %>
-
-
-</div>
-<!-- ./wrapper -->
-
-
-  	
-    
+	
   </body>
 </html>

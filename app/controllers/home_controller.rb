@@ -4,4 +4,9 @@ class HomeController < ApplicationController
 		@contract_types = ContractType.all
 		@featured = Property.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6)
 	end
+
+	def properties
+		@properties = Property.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6)
+
+	end
 end

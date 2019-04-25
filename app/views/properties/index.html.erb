@@ -1,49 +1,25 @@
-
-
-<!-- Content Header (Page header) -->
-<section class="content-header">
-         <div class="pull-left">
-             <h1>Propriétés</h1>
-        <!-- <small>Liste des propriétés</small> -->
-         </div> 
-
-          <h1>
-       
-      </h1>
-           
-            <div class="pull-right">
-              <%= link_to "AJOUTER",  new_property_path , class: "btn bg-purple" %>
-            </div>
-          
-
-
-</section>
-
-<!-- Main content -->
-<section class="content">
-
-    <div class="row">
-        <div class="col-sm-12">
-    
+<div class="br-pageheader">
+      <nav class="breadcrumb pd-0 mg-0 tx-12">
+        
+        <span class="breadcrumb-item active">Mes propriétés</span>
+      </nav>
+    </div><!-- br-pageheader -->
+<div class="br-pagebody">
+  <div class="br-section-wrapper">
+    <div class="headers mg-b-20">
+        <div class="left-content">
         </div>
+
+        <div class="text-right">
+            <%= link_to raw('<i class="fa fa-plus" aria-hidden="true"></i> Ajouter'), new_property_path, class: "btn btn-primary tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1" %>
+
+        </div>
+
     </div>
 
-    <div class="row">
-        <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Mes propriétés</h3>
 
-              <div class="box-tools pull-right">
-                    <!-- Right content here -->
-                </div>
+<table id="datatable1" class="table display responsive nowrap">
 
-            </div>
-
-
-          <div class="box-body">
-             <!-- Content here -->
-             <!-- <table id="example2" class="table table-bordered table-striped">-->
-             <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
                        <th>Image</th>
@@ -54,28 +30,15 @@
                       <th>Quartier</th>
                       <th>Statut</th>
                       
-                      <th style="width: 60px"></th>
+                      <th>Actions</th>
                       
                     </tr>
                   </thead>
-                  <tbody class="client-index">
+                  <tbody class="properties-index">
                     <%= render('index') %>
                   </tbody>
-              </table>
-          </div>
-
-          <!--<div class="box-footer hidden-xs hidden-sm">
-            Section footer content here 
-          </div>-->
-
-          <div class="row page-navi">
-      <%= will_paginate @properties, previous_label: "Précédent",next_label: "Suivant",  renderer: BootstrapPagination::Rails %>
-        
-    </div>
-        
-        </div>
-    </div>
-
-    
+             </table>
+</div>
+</div>
 
    
